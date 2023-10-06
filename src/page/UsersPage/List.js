@@ -4,16 +4,7 @@ import { connect } from "react-redux";
 import { SET_USER } from "../../redux/constant/user";
 import { setUserAction } from "../../redux/action/user";
 import { message } from "antd";
-
 class List extends Component {
-  /**
-     lấy tất cả, xoá, lấy chi tiết theo id
-   * renderUserList
-   * 1. tạo 1 state chứa users
-   * 2. gọi api get all, và setState sau khi gọi thành công
-   * 3. viết hàm render table user
-   */
-
   componentDidMount() {
     this.props.handleSetUser();
   }
@@ -47,7 +38,6 @@ class List extends Component {
       );
     });
   };
-
   handleDelelte = (id) => {
     axios
       .delete(`https://64e1f45bab0037358818889f.mockapi.io/user/${id}`)
@@ -59,11 +49,6 @@ class List extends Component {
       .catch((err) => {
         console.log(err);
       });
-    /**
-     * 1. gắn handle delete vào button delete
-     * 2. gọi api với method delete
-     * 3. sau khi delete thành công => dispatch action lấy danh sách user mới nhất
-     */
   };
   handleGetDetail = (id) => {
     axios

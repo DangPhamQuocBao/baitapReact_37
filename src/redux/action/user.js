@@ -1,6 +1,5 @@
 import axios from "axios";
 import { SET_USER } from "../constant/user";
-
 export let setUserAction = () => {
   return (dispatch) => {
     axios({

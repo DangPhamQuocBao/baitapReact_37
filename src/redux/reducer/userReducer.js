@@ -8,7 +8,6 @@ const initialState = {
     password: "",
   },
 };
-
 export let userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case SET_USER: {
@@ -23,6 +22,3 @@ export let userReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-
-// 1.  viết case set user ở reducer
-// 2. dispatch tại componentdidmount

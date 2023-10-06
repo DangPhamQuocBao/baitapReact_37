@@ -3,14 +3,7 @@ import React, { Component, createRef } from "react";
 import { connect } from "react-redux";
 import { SET_DATA_FORM, SET_USER } from "../../redux/constant/user";
 import { setUserAction } from "../../redux/action/user";
-
 class Form extends Component {
-  /**
-   * * chức năng thêm
-   * 1.tạo state chứa input từ user
-   * 2. gọi api với method POST, đưa data từ state lên server
-   *
-   */
   componentDidMount() {
     this.inputRef.current.focus();
     this.inputRef.current.value = "defaultAccount";
