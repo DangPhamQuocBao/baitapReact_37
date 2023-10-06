@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./page/HomePage/HomePage";
+import LoginPage from "./page/LoginPage/LoginPage";
+import Header from "./component/Header/Header";
+import LifeCycle from "./page/LifeCycle/LifeCycle";
+import UsersPage from "./page/UsersPage/UsersPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          {/*  1 page => 2 thành phần : path ( đường dẫn )  element ( component ) */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/life-cycle" element={<LifeCycle />} />
+          <Route path="/users" element={<UsersPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
